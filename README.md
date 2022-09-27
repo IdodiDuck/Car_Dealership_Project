@@ -1,6 +1,6 @@
 # ****My First_Repository**** - ****Published at 09/26/2022****
 
-## **Welcome to my First_Repository:**
+## **Welcome to my First_Repository - Car Dealership Project::**
 
 `Here I work on my First Project on Github! Woho!`
 ---
@@ -20,6 +20,8 @@ The languages I know are:
 - `Python`
 - `Go/GoLang`
 - `MarkDown`
+
+In this project I use only Python
 
 ---
 
