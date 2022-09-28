@@ -1,19 +1,23 @@
-# Cars Finder Basic Algorithm Program, made by IdoRedid123
+'''A Basic Beginner Dealership Project where you can sell/publish/buy your cars.
+Using abilities such as superclass, subclass, inheritance, Methods, Conditions, Default Arguments, Tuples, Dictonaries, Lists, F-Strings, etc etc...'''
 class Car:
     car_companies = (
     'Tesla', 'Mazda', 'KIA', 'Chevrolet', 'Hyundai', 'BMW', ' Toyota', ' Honda', 'Audi', ' Nissan', 'Mercedes')
     published_cars = []
 
     def __init__(self, color='White', year=2022, company=None):
+        
         self.color = color
         self.year = year
         self.company = company
 
     def buy_car(self):
+
         buy_input = input(f"Looks like you're interested to buy a car. Here we have our available offers:\n{Car.published_cars}")
         print(f'Congratulations! You bought a car! Have a safe drive!')
 
     def publish_car(self, car_company=None, car_model=None, car_price=0, car_color=None, car_year=2022):
+
         Car.published_cars.append(f'Company: {car_company}\nModel: {car_model}\nColor: {car_color}\nYear: {car_year}')
         print(f'''Published a car with the next information:
         \nCompany: {car_company}\nModel: {car_model}\nColor: {car_color}\nYear: {car_year}\nPrice: {car_price}$''')

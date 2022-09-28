@@ -1,11 +1,25 @@
 # ****My First_Repository**** - ****Published at 09/26/2022****
 
-## **Welcome to my First_Repository - Car Dealership Project::**
+## **Welcome to my First_Repository - Car Dealership Project:**
 
-`Here I work on my First Project on Github! Woho!`
+```Here I work on my First Project on Github! Woho!```
+
 ---
 
+## **What is this Repository about?:**
+
+A Basic Beginner Dealership Project where you can sell/publish/buy your cars.
+Using abilities such as:
+
+- ```OOP - Superclasses & Subclasses, Inheritance, Polymorphism, Methods...```
+- ```Conditions - if, elif and else statements...```
+- ```Functions -  Parameters, Default Arguments... ```
+- ```Loops - For Loops, While Looks, Continue & Break Statements...```
+- ```Data Structures - Tuples, Dictonaries, Lists... ```
+- ```Strings - inputs, F-Strings, Strings Methods...```
+
 ---
+
 
 ## **About me:**
 ``My name is Ido, I'm a programming enthusaistic``
