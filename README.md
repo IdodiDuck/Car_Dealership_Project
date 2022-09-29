@@ -14,7 +14,7 @@ Using abilities such as:
 - ```OOP - Superclasses & Subclasses, Inheritance, Polymorphism, Methods...```
 - ```Conditions - if, elif and else statements...```
 - ```Functions -  Parameters, Default Arguments... ```
-- ```Loops - For Loops, While Looks, Continue & Break Statements...```
+- ```Loops - For Loops, While Loop, Continue & Break Statements...```
 - ```Data Structures - Tuples, Dictonaries, Lists... ```
 - ```Strings - inputs, F-Strings, Strings Methods...```
 
