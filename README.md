@@ -36,7 +36,7 @@ The languages I know are:
 - `Go/GoLang`
 - `MarkDown`
 
-In this project I use only Python
+In this project I use only Python and MarkDown
 
 ---
 
