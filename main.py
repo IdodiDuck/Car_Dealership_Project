@@ -199,7 +199,7 @@ def main():
         user_action_decision = input(f'Welcome to the Car Dealearship, Type buy_car to start the process: ')
 
         if user_action_decision.lower() == 'buy_car':
-            car_company_decision = input('What company would you like to buy from? ')
+            car_company_decision = input(f'What company would you like to buy from? {list(companies_dict.keys())}: ')
 
             if car_company_decision in Car.car_companies:
                 car_model_decision = input(f'What model from {car_company_decision} would you like to have? ')
@@ -209,7 +209,7 @@ def main():
                     car_year_decision = int(input(f'What year of the car would you like?: (Year above 2010, Default = 2022 ): '))
                     if car_model_decision in models_dict[car_company_decision]:
                         if car_color_decision in colors_tup or car_color_decision == '':
-                            if car_year_decision == '' or car_year_decision > 2010:
+                            if car_year_decision == '' or car_year_decision > 2010 and car_year_decision < 2023:
                                 requested_car = companies_dict[car_company_decision](car_color_decision, car_year_decision, car_model_decision)
                                 requested_car.buy_car(car_company_decision, car_model_decision, car_color_decision, car_year_decision, requested_car.models[car_model_decision])
                                 quit_input = input('Would you like quit the prorgam? [Yes/No]: ')
