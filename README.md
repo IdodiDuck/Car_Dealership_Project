@@ -16,6 +16,7 @@ Using abilities such as:
 - ```Functions -  Parameters, Default Arguments... ```
 - ```Loops - For Loops, While Loop, Continue & Break Statements...```
 - ```Data Structures - Tuples, Dictonaries, Lists... ```
+- ```Exceptions - Exceptions, Try and Except statements, Errors handling...```
 - ```Strings - inputs, F-Strings, Strings Methods...```
 
 ---
