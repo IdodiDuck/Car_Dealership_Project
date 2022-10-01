@@ -28,7 +28,7 @@ class Car:
 
 class Tesla(Car):
     '''Tesla Subclass of Car. Used to present the Company Tesla. Class has all the models of Tesla saved inside'''
-    models = ('Model S', 'Model 3', 'Model Y', 'CyberTruck', 'Tesla')
+    models = {'Model S': 185000, 'Model 3': 200000, 'Model Y': 175000, 'CyberTruck': 250000, 'Tesla': 150000}
 
     def __init__(self, color='White', year=2022, company=None, model=None):
         Car.__init__(self, color='White', year=2022, company=None)
@@ -36,7 +36,7 @@ class Tesla(Car):
 
         if model in Tesla.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Tesla.models[model])
         else:
             print(f'Model was not found. Please choose a model from {Tesla.models}')
 
@@ -51,7 +51,7 @@ class Mazda(Car):
 
         if model in Mazda.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Mazda.models[model])
         else:
             print(f'Model was not found. Please choose a model from {Mazda.models}')
 
@@ -65,7 +65,7 @@ class KIA(Car):
 
         if model in KIA.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, KIA.models[model])
         else:
             print(f'Model was not found. Please choose a model from {KIA.models}')
 
@@ -78,7 +78,7 @@ class Chevrolet(Car):
         self.model = model
         if model in Chevrolet.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Chevrolet.models[model])
         else:
             print(f'Model was not found. Please choose a model from {Chevrolet.models}')
 
@@ -92,7 +92,7 @@ class Hyundai(Car):
 
         if model in Hyundai.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Hyundai.models[model])
         else:
             print(f'Model was not found. Please choose a model from {Hyundai.models}')
 
@@ -106,7 +106,7 @@ class BMW(Car):
 
         if model in BMW.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, BMW.models[model])
         else:
             print(f'Model was not found. Please choose a model from {BMW.models}')
 
@@ -120,7 +120,7 @@ class Toyota(Car):
 
         if model in Toyota.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Toyota.models[model])
         else:
             print(f'Model was not found. Please choose a model from {Toyota.models}')
 
@@ -134,7 +134,7 @@ class Honda(Car):
 
         if model in Honda.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Honda.models[model])
         else:
             print(f'Model was not found. Please choose a model from {Honda.models}')
 
@@ -148,7 +148,7 @@ class Audi(Car):
 
         if model in Audi.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Audi.models[model])
 
         else:
             print(f'Model was not found. Please choose a model from {Audi.models}')
@@ -163,7 +163,7 @@ class Nissan(Car):
 
         if model in Nissan.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Nissan.models[model])
 
         else:
             print(f'Model was not found. Please choose a model from {Nissan.models}')
@@ -178,7 +178,7 @@ class Mercedes(Car):
 
         if model in Mercedes.models:
             self.model = model
-            super().buy_car(company, model, color, year)
+            super().buy_car(company, model, color, year, Mercedes.models[model])
 
         else:
             print(f'Model was not found. Please choose a model from {Mercedes.models}')
@@ -202,15 +202,19 @@ def main():
             car_company_decision = input(f'What company would you like to buy from? {list(companies_dict.keys())}: ')
 
             if car_company_decision in Car.car_companies:
-                car_model_decision = input(f'What model from {car_company_decision} would you like to have? ')
+                car_model_decision = input(f'What model from {car_company_decision} would you like to have? The models are: \n{models_dict[car_company_decision]} - Prices in new shekel: ')
                 car_color_decision = input(f'What color would you like to have (Default = White)\nPick a color from the list {colors_tup}: ')
 
                 try:
                     car_year_decision = int(input(f'What year of the car would you like?: (Year above 2010, Default = 2022 ): '))
+                except ValueError:
+                    print(f'Error! Please enter an intenger for the year argument')
+                else:
+
                     if car_model_decision in models_dict[car_company_decision]:
                         if car_color_decision in colors_tup or car_color_decision == '':
                             if car_year_decision == '' or car_year_decision > 2010 and car_year_decision < 2023:
-                                requested_car = companies_dict[car_company_decision](car_color_decision, car_year_decision, car_model_decision)
+                                requested_car = companies_dict[car_company_decision](car_color_decision, car_year_decision, car_company_decision, car_model_decision)
                                 requested_car.buy_car(car_company_decision, car_model_decision, car_color_decision, car_year_decision, requested_car.models[car_model_decision])
                                 quit_input = input('Would you like quit the prorgam? [Yes/No]: ')
                                 if quit_input.lower() == 'yes':
@@ -230,8 +234,7 @@ def main():
                         continue
 
 
-                except ValueError:
-                    print(f'Error! Please enter an intenger for the year argument')
+                
 
             else:
                 print(f'Could not find the company. Please type one of the {list(companies_dict.keys())}')
