@@ -207,6 +207,7 @@ def main():
 
                 try:
                     car_year_decision = int(input(f'What year of the car would you like?: (Year above 2010, Default = 2022 ): '))
+                    
                 except ValueError:
                     print(f'Error! Please enter an intenger for the year argument')
                 else:
@@ -220,7 +221,7 @@ def main():
                                 if quit_input.lower() == 'yes':
                                     print(f'Thank you for coming. Have a nice day!')
                                     quit()
-
+                                    
                             else:
                                 print(f'Year is invalid. Pick a valid year')
                                 continue
@@ -232,12 +233,9 @@ def main():
                     else:
                         print(f'Model was not found. Please choose one of the company\'s models next time\n{car_company_decision}\'s Models --> {models_dict[car_company_decision]}')
                         continue
-
-
-                
-
             else:
                 print(f'Could not find the company. Please type one of the {list(companies_dict.keys())}')
+                continue
 
         else:
             print(f"Could not find the action you typed. Please type the required action")
