@@ -204,12 +204,12 @@ def main():
             if car_company_decision in Car.car_companies:
                 car_model_decision = input(f'What model from {car_company_decision} would you like to have? The models are: \n{models_dict[car_company_decision]} - Prices in new shekel: ')
                 car_color_decision = input(f'What color would you like to have (Default = White)\nPick a color from the list {colors_tup}: ')
-
                 try:
                     car_year_decision = int(input(f'What year of the car would you like?: (Year above 2010, Default = 2022 ): '))
-                    
+
                 except ValueError:
                     print(f'Error! Please enter an intenger for the year argument')
+
                 else:
 
                     if car_model_decision in models_dict[car_company_decision]:
