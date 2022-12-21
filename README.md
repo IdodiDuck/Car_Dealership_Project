@@ -35,6 +35,7 @@ The languages I know are:
 - `Python`
 - `Go/GoLang`
 - `MarkDown`
+- `SQL`
 
 In this project I use only Python and MarkDown
 
